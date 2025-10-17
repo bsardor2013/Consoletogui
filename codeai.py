@@ -54,13 +54,3 @@ class Ai:
     def get_code(self):
         return self.converted_code
 
-
-code="""
-a=int(input("sonni kiriting"))
-a=a**2
-b=int(input("sonni kiriting"))
-
-b=b+23
-print(a,b)
-"""
-print(Ai(code,"kvadarti").get_code())
