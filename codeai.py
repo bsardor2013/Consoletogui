@@ -53,4 +53,3 @@ class Ai:
 
     def get_code(self):
         return self.converted_code
-
