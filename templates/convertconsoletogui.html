@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Console to GUI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bodywrite">
+    {% if user %}
+        <div class="win">
+            <h1 class="label">Hello, {{ user }}!</h1>
+            <p class="label">This is the Convert Console to GUI page.</p>
+            <a href="{{ url_for('dashboard') }}">
+                <button class="button" style="text-align: left; justify-content: flex-start;">Back to Dashboard</button>
+            </a>
+            <form action="{{ url_for('convert') }}" method="post" style="width:100%; margin-top:12px;">
+                <label class="label">Enter Console Code:</label><br>
+                <textarea
+                    class="input"
+                    name="python_code"
+                    rows="12"
+                    placeholder="Paste your console Python code here..."
+                    style="width:100%; max-width:900px; min-width:300px; overflow:auto; white-space:pre-wrap; resize:vertical;"
+                    required></textarea>
+                <br><br>
+                <input type="submit" value="Convert to GUI" class="button">
+            </form>
+        </div>
+
+        {% if gui_code %}
+            <div class="win" style="margin-top:16px;">
+                <h2 class="label">Converted / Result:</h2>
+                <pre class="code" style="text-align:left; white-space:pre-wrap; max-width:900px;">{{ gui_code }}</pre>
+            </div>
+        {% endif %}
+
+    {% else %}
+        <div>
+            <h2 class="label">You are not logged in.</h2>
+            <a href="{{ url_for('login') }}">
+                <button class="button">Login</button>
+            </a>
+        </div>
+    {% endif %}
+    
+</body>
+</html>

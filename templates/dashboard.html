@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bodywrite">
+    {% if user %}
+        <div class="win">
+            <h1 class="label">Welcome, {{ user }}!</h1>
+            <p class="label">This is your dashboard.</p>
+            <a href="{{ url_for('convertconsoletogui') }}">
+                <button class="button" style="text-align: left; justify-content: flex-start;">Convert Console to GUI</button>
+            </a>
+            <p> </p>
+            <a href="{{ url_for('logout') }}">
+                <button class="button" style="text-align: left; justify-content: flex-start;">Logout</button>
+            </a>
+        </div>
+    {% else %}
+        <div class="win">
+            <h2 class="label" style="background-color:rbg(101, 114, 25) ;">You are not logged in.</h2>
+            <a href="{{ url_for('login') }}">
+                <button class="button">Login</button>
+            </a>
+        </div>
+    {% endif %}
+</body>
+</html>

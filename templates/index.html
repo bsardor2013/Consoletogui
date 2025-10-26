@@ -6,8 +6,13 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h1>Welcome to the ConsoleToGui web site</h1>
-    <p>This web site for ConsoleToGui</p>
+<body class="bodywrite">
+    <dir class="win">
+        <h1 class="homeh1">Welcome to the ConsoleToGui web site</h1>
+        <p class="homeh1">When do you get started ?</p>
+        <a href="{{ url_for('login') }}">
+            <button class="button">Now get started</button>
+        </a>
+    </dir>
 </body>
 </html>
