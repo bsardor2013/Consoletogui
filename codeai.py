@@ -32,7 +32,7 @@ class Ai:
 
                 input_counter += 1
             elif line.startswith("print("):
-                converted_lines.append(line.replace("print(", "self.print("))
+                converted_lines.append(line.replace("print(", "self.print(self."))
             else:
                 converted_lines.append(line)
 
